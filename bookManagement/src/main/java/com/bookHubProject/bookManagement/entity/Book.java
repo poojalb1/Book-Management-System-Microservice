@@ -21,7 +21,7 @@ public class Book {
     String bookAuthor;
 
     @Enumerated(EnumType.STRING) // Specify enum storage type (as VARCHAR)
-    BookStatus BookStatus;
+    BookStatus bookStatus;
 
     public enum BookStatus {
         AVAILABLE,

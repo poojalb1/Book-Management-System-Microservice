@@ -36,7 +36,7 @@ public class BookController {
     public ResponseEntity<Book> updateBook(@RequestBody Book book) {
         Optional<Book> getBook = bookService.findById(book.getBookId());
         if (getBook.isPresent())
-            return ResponseEntity.ok(bookService.addBook(getBook.get()));
+            return ResponseEntity.ok(bookService.addBook(book));
         else return (ResponseEntity<Book>) ResponseEntity.notFound();
     }
 
