@@ -7,7 +7,7 @@ import lombok.*;
 @AllArgsConstructor
 @Setter
 @Getter
-public class Book {
+public class TestBook {
     String name;
     String author;
     String price;
