@@ -2,6 +2,7 @@ package com.bookHubProject.orderManagement.service;
 
 import com.bookHubProject.orderManagement.entity.Order;
 import com.bookHubProject.orderManagement.entity.dto.BookDTO;
+import com.bookHubProject.orderManagement.proxy.BookManagementProxy;
 import com.bookHubProject.orderManagement.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,13 +19,16 @@ public class OrderService {
     @Autowired
     private RestTemplate restTemplate;
 
+    @Autowired
+    BookManagementProxy proxy;
+
     private static final String BOOK_SERVICE_URL = "http://localhost:8081/book";
 
 
     public Order placeOrder(Order order) {
         // Fetch book details from the book service
-        ResponseEntity<BookDTO> response = restTemplate.getForEntity(BOOK_SERVICE_URL + "/{id}", BookDTO.class, order.getBookId());
-        BookDTO book = response.getBody();
+        //ResponseEntity<BookDTO> response = restTemplate.getForEntity(BOOK_SERVICE_URL + "/{id}", BookDTO.class, order.getBookId());
+        BookDTO book = proxy.retrieveBookInfo(order.getBookId());
 
         if (book == null || book.getBookStatus() != BookDTO.BookStatus.AVAILABLE) {
             throw new RuntimeException("Book not found or not available");
