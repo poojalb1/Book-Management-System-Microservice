@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@FeignClient(name = "book-management", url = "localhost:8081")
+@FeignClient(name = "book-management")
 public interface BookManagementProxy {
 
     @GetMapping("/book/{id}")
