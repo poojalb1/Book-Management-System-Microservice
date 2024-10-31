@@ -2,11 +2,11 @@
 A microservice application for book management, featuring separate services for managing books and handling orders
 
 # Microservices Description
-## Config Server
+## Config Server<br>
 
-Provides centralized configuration for all microservices.
-Uses Spring Cloud Config Server.
-## Book-management Service
+Provides centralized configuration for all microservices.<br>
+Uses Spring Cloud Config Server.<br>
+## Book-management Service<br>
 
 Provides book CRUD operations.
 Integrated with Eureka Discovery.
