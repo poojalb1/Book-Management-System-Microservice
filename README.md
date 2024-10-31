@@ -36,7 +36,7 @@ Gradle<br>
 # Running the Microservices
 Clone the repository
 
-git clone [https://github.com/PramithaMJ/fully-completed-microservices.git](https://github.com/poojalb1/Book-Management-System-Microservice.git)<br>
+git clone (https://github.com/poojalb1/Book-Management-System-Microservice.git)<br>
  
 Use start_services.bat batch file to run all services.<br>
 
